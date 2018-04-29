@@ -48,5 +48,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Day7Tanks\Day7Tanks.csproj">
+      <Project>{b12d037e-86ec-448a-8c7e-c4a1e579bee0}</Project>
+      <Name>Day7Tanks</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

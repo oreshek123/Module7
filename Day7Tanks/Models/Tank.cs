@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace Day7Tanks.Models
 {
-    enum TypeOfTank {T34, Pantera }
-    class Tank
+    public enum TypeOfTank {T34, Pantera }
+    public class Tank
     {
         /// <summary>
         /// Боекомлект
@@ -23,14 +23,18 @@ namespace Day7Tanks.Models
         /// </summary>
         private int Maneuverability { get; set; }
         public TypeOfTank TankType { get; set; }
+       
         public Tank() { }
-        public Tank(TypeOfTank Tank)
+        public Tank(int tank)
         {
             Random random = new Random();
             Ammunition = random.Next(0, 100);
             Armor = random.Next(0, 100);
             Maneuverability = random.Next(0, 100);
-            TankType = Tank;
+            if (tank == 1)
+            TankType = TypeOfTank.Pantera;
+            else if (tank == 0)
+                TankType = TypeOfTank.T34;
         }
 
         public static Tank operator *(Tank tank1, Tank tank2)
